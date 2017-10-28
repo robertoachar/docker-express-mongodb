@@ -26,6 +26,10 @@
     "url": "https://github.com/robertoachar/docker-express-mongo/issues"
   },
   "dependencies": {
+    "body-parser": "1.18.2",
+    "dotenv": "4.0.0",
+    "express": "4.16.2",
+    "helmet": "3.9.0",
     "winston": "2.4.0"
   },
   "devDependencies": {
