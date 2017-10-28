@@ -1,1 +1,3 @@
-console.log('It works');
+const winston = require('winston');
+
+winston.info('It works!');
