@@ -9,6 +9,7 @@ RUN npm install -g nodemon
 VOLUME [ "/usr/src/app" ]
 
 ENV NODE_ENV=development
+ENV DATABASE=mongodb://mongodb:27017/sample
 ENV PORT=3000
 
 EXPOSE 3000

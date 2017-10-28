@@ -1,15 +1,19 @@
 const bodyParser = require('body-parser');
 const express = require('express');
 const helmet = require('helmet');
+const morgan = require('morgan');
 
 const error = require('./error');
 
 const app = express();
+const router = express.Router();
 
 app.use(helmet());
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use(morgan('tiny'));
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
@@ -26,6 +30,10 @@ app.use((req, res, next) => {
 app.get('/', (req, res) => {
   res.json({ message: 'It works!' });
 });
+
+app.use('/api', router);
+
+require('./user/user.router')(router);
 
 app.use(error.notFound);
 app.use(error.catchAll);
