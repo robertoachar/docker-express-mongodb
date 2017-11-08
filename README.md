@@ -47,6 +47,16 @@ $ docker-compose up
 $ docker-compose down
 ```
 
+# Rest API
+
+Resource | Description
+-------- | -----------
+`GET /users`        | return all users
+`GET /users/:id`    | return a user by id
+`POST /users`       | create a new user
+`PUT /users/:id`    | update a user
+`DELETE /users/:id` | delete a user
+
 # Author
 
 [Roberto Achar](https://twitter.com/robertoachar)
