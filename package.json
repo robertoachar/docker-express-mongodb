@@ -10,7 +10,7 @@
     "node",
     "nodemon",
     "express",
-    "mongo",
+    "mongodb",
     "live-reload"
   ],
   "main": "src/index.js",
