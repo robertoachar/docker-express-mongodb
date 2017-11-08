@@ -10,6 +10,7 @@
     "node",
     "nodemon",
     "express",
+    "rest-api",
     "mongodb",
     "live-reload"
   ],
