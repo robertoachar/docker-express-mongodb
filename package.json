@@ -6,9 +6,12 @@
   "homepage": "https://github.com/robertoachar/docker-express-mongo#readme",
   "keywords": [
     "docker",
+    "docker-compose",
     "node",
+    "nodemon",
     "express",
-    "mongo"
+    "mongo",
+    "live-reload"
   ],
   "main": "src/index.js",
   "files": [
