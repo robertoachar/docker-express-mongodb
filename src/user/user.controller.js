@@ -27,7 +27,7 @@ module.exports.delete = async (req, res) => {
 
 // list
 module.exports.list = async (req, res) => {
-  const users = await User.find().sort('address');
+  const users = await User.find();
 
   res.json(users);
 };
