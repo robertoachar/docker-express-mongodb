@@ -22,10 +22,10 @@ $ npm install
 
 * Running scripts
 
-Action | Usage
----    | ---
-Starting development mode | `npm start`
-Linting code              | `npm run lint`
+| Action                    | Usage          |
+| ------------------------- | -------------- |
+| Starting development mode | `npm start`    |
+| Linting code              | `npm run lint` |
 
 # Docker
 
@@ -49,13 +49,15 @@ $ docker-compose down
 
 # Rest API
 
-Resource | Description
--------- | -----------
-`GET /users`        | return all users
-`GET /users/:id`    | return a user by id
-`POST /users`       | create a new user
-`PUT /users/:id`    | update a user
-`DELETE /users/:id` | delete a user
+### User Service
+
+| Method | Endpoint       | Description               |
+| ------ | -------------- | ------------------------- |
+| GET    | /api/users     | Retrieves a list of users |
+| POST   | /api/users     | Retrieves a specific user |
+| GET    | /api/users/:id | Creates a new user        |
+| PUT    | /api/users/:id | Updates user              |
+| DELETE | /api/users/:id | Deletes user              |
 
 # Author
 
