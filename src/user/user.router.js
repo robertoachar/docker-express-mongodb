@@ -1,5 +1,5 @@
 const userController = require('./user.controller');
-const { catchErrors } = require('../error');
+const catchErrors = require('express-catch-errors');
 
 module.exports = (router) => {
   router.get('/users', catchErrors(userController.list));

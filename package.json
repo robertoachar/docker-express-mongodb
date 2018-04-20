@@ -15,9 +15,7 @@
     "live-reload"
   ],
   "main": "src/index.js",
-  "files": [
-    "src"
-  ],
+  "files": ["src"],
   "scripts": {
     "lint": "eslint src/**/*.js",
     "start": "nodemon src/index.js"
@@ -34,6 +32,7 @@
     "body-parser": "1.18.2",
     "dotenv": "5.0.1",
     "express": "4.16.3",
+    "express-catch-errors": "0.1.0",
     "helmet": "3.12.0",
     "mongoose": "5.0.15",
     "morgan": "1.9.0",
