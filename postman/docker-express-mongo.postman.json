@@ -1,0 +1,123 @@
+{
+  "info": {
+    "_postman_id": "69d9657e-bef4-080e-f8c8-1ec9d1c13526",
+    "name": "docker-express-mongo",
+    "schema":
+      "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "/",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {},
+        "url": {
+          "raw": "http://localhost:3000/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": [""]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/users",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {},
+        "url": {
+          "raw": "http://localhost:3000/api/users",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "users"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/users",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw":
+            "{\n  \"_id\": \"59c1b2c49ef4e4143cf62fa1\",\n  \"name\": \"Roberto\",\n  \"age\": 37\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/users",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "users"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/users/:id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {},
+        "url": {
+          "raw": "http://localhost:3000/api/users/59c1b2c49ef4e4143cf62fa1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "users", "59c1b2c49ef4e4143cf62fa1"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/users/:id",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Roberto Achar\",\n  \"age\": 37\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/users/59c1b2c49ef4e4143cf62fa1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "users", "59c1b2c49ef4e4143cf62fa1"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/users/:id",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {},
+        "url": {
+          "raw": "http://localhost:3000/api/users/59c1b2c49ef4e4143cf62fa1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "users", "59c1b2c49ef4e4143cf62fa1"]
+        }
+      },
+      "response": []
+    }
+  ]
+}

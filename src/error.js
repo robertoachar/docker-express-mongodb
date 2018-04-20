@@ -1,16 +1,21 @@
 /* eslint no-unused-vars: 0 */
 
-module.exports.catchErrors = (fn) => {
-  return function (req, res, next) {
-    return fn(req, res, next).catch(next);
-  };
+const winston = require('winston');
+
+module.exports.notFound = (req, res, next) => {
+  winston.warn('Not found');
+
+  const error = new Error('Not Found');
+  error.status = 404;
+
+  next(error);
 };
 
 module.exports.catchAll = (err, req, res, next) => {
-  res.status(err.status || 500);
-  res.json({ message: err.message });
-};
+  const status = err.status || 500;
+  const message = err.message || 'Something broke';
 
-module.exports.notFound = (req, res, next) => {
-  res.sendStatus(404);
+  winston.error(message);
+
+  res.status(status).json({ error: { message } });
 };
