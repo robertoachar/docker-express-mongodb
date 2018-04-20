@@ -34,7 +34,9 @@ module.exports.list = async (req, res) => {
 
 // update
 module.exports.update = async (req, res) => {
-  const user = await User.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true }).exec();
+  const user = await User.findOneAndUpdate({ _id: req.params.id }, req.body, {
+    new: true
+  }).exec();
 
   res.json(user);
 };

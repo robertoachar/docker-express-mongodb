@@ -17,7 +17,10 @@ app.use(morgan('tiny'));
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Methods', 'DELETE, GET, OPTIONS, PATCH, PUT, POST');
+  res.header(
+    'Access-Control-Allow-Methods',
+    'DELETE, GET, OPTIONS, PATCH, PUT, POST'
+  );
   res.header('Access-Control-Allow-Headers', 'Authorization, Content-Type');
 
   if (req.method === 'OPTIONS') {
