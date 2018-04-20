@@ -1,4 +1,5 @@
 const bodyParser = require('body-parser');
+const cors = require('@robertoachar/express-cors');
 const express = require('express');
 const helmet = require('helmet');
 const morgan = require('morgan');
@@ -9,26 +10,10 @@ const app = express();
 const router = express.Router();
 
 app.use(helmet());
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-
 app.use(morgan('tiny'));
-
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header(
-    'Access-Control-Allow-Methods',
-    'DELETE, GET, OPTIONS, PATCH, PUT, POST'
-  );
-  res.header('Access-Control-Allow-Headers', 'Authorization, Content-Type');
-
-  if (req.method === 'OPTIONS') {
-    return res.sendStatus(200);
-  }
-
-  next();
-});
+app.use(cors());
 
 app.get('/', (req, res) => {
   res.json({ message: 'It works!' });
