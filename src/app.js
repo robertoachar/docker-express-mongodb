@@ -4,26 +4,24 @@ const express = require('express');
 const helmet = require('helmet');
 const morgan = require('morgan');
 
-const error = require('./error');
+const { catchAll, notFound } = require('./error');
 
 const app = express();
-const router = express.Router();
+const userRouter = require('./user/user.router');
 
 app.use(helmet());
+app.use(cors());
+app.use(morgan('tiny'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(morgan('tiny'));
-app.use(cors());
 
 app.get('/', (req, res) => {
   res.json({ message: 'It works!' });
 });
 
-app.use('/api', router);
+app.use('/api/users', userRouter);
 
-require('./user/user.router')(router);
-
-app.use(error.notFound);
-app.use(error.catchAll);
+app.use(notFound);
+app.use(catchAll);
 
 module.exports = app;

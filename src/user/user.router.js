@@ -1,26 +1,25 @@
-const userController = require('./user.controller');
+const express = require('express');
 const catchErrors = require('express-catch-errors');
 
-module.exports = (router) => {
-  router.get('/users', catchErrors(userController.list));
+const router = express.Router();
+const {
+  check,
+  create,
+  remove,
+  list,
+  update,
+  view
+} = require('./user.controller');
 
-  router.get(
-    '/users/:id',
-    catchErrors(userController.check),
-    catchErrors(userController.view)
-  );
+router
+  .route('/')
+  .get(catchErrors(list))
+  .post(catchErrors(create));
 
-  router.post('/users', catchErrors(userController.create));
+router
+  .route('/:id')
+  .get(catchErrors(check), catchErrors(view))
+  .put(catchErrors(check), catchErrors(update))
+  .delete(catchErrors(check), catchErrors(remove));
 
-  router.put(
-    '/users/:id',
-    catchErrors(userController.check),
-    catchErrors(userController.update)
-  );
-
-  router.delete(
-    '/users/:id',
-    catchErrors(userController.check),
-    catchErrors(userController.delete)
-  );
-};
+module.exports = router;

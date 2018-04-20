@@ -2,7 +2,7 @@
 
 require('dotenv').config();
 
-const environment = ['NODE_ENV', 'PORT', 'DATABASE'];
+const environment = ['NODE_ENV', 'DATABASE', 'PORT'];
 
 environment.forEach((name) => {
   if (!process.env[name]) {
@@ -12,6 +12,6 @@ environment.forEach((name) => {
 
 module.exports = {
   NODE_ENV: process.env.NODE_ENV,
-  PORT: process.env.PORT,
-  DATABASE: process.env.DATABASE
+  DATABASE: process.env.DATABASE,
+  PORT: process.env.PORT
 };
