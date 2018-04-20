@@ -59,6 +59,10 @@ $ docker-compose down
 | PUT    | /api/users/:id | Updates user              |
 | DELETE | /api/users/:id | Deletes user              |
 
+# Postman
+
+* postman/docker-express-mongo.postman.json
+
 # Author
 
 [Roberto Achar](https://twitter.com/robertoachar)
