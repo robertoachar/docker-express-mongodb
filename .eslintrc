@@ -5,5 +5,8 @@
   },
   "parserOptions": {
     "ecmaVersion": 8
+  },
+  "rules": {
+    "no-process-env": "error"
   }
 }

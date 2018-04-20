@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 const winston = require('winston');
 
-require('dotenv').config();
+const config = require('./config');
 
-mongoose.connect(process.env.DATABASE, { useMongoClient: true });
+mongoose.connect(config.DATABASE, { useMongoClient: true });
 mongoose.Promise = global.Promise;
 mongoose.connection.on('error', (err) => {
   winston.error(err.message);
@@ -13,7 +13,7 @@ require('./user/user.model');
 
 const app = require('./app');
 
-app.listen(process.env.PORT, () => {
-  winston.info(`Environment: ${process.env.NODE_ENV}`);
-  winston.info(`Express: ${process.env.PORT}`);
+app.listen(config.PORT, () => {
+  winston.info(`Environment: ${config.NODE_ENV}`);
+  winston.info(`Express: ${config.PORT}`);
 });
